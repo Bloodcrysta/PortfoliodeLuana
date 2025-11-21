@@ -1,0 +1,766 @@
+/* ▓▓▓ RESETEO Y FUENTES ▓▓▓ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ▓▓▓ GENERAL ▓▓▓ */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  background: #000;
+}
+
+
+/* ▓▓▓ CABECERA ▓▓▓ */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 15, 15, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5em;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+
+nav ul li {
+  margin-left: 30px;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+
+nav ul li a:hover {
+  color: #fa1212;
+}
+
+
+/* ▓▓▓ HERO ▓▓▓ */
+.hero {
+  position: relative;
+  background: url('Imagenes/portada.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 150px;
+  overflow: hidden;
+}
+
+
+/* Efecto neblina */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.03) 0%, transparent 60%);
+  animation: neblina 10s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+
+@keyframes neblina {
+  from { transform: translateX(-30px); opacity: 0.6; }
+  to { transform: translateX(30px); opacity: 1; }
+}
+
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 3;
+}
+
+
+.hero-content p {
+  color: #ffffff;
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+
+/* ▓▓▓ BOTÓN ROJO ▓▓▓ */
+.btn-rojo {
+  background: #000;
+  color: #fff;
+  padding: 14px 35px;
+  font-size: 18px;
+  border: 2px solid #550000;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+.btn-rojo:hover {
+  border-color: #ff0000;
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #900000 inset;
+  transform: scale(1.05);
+}
+
+
+/* ▓▓▓ CATEGORÍAS ▓▓▓ */
+.categorias {
+  padding: 100px 50px;
+  background: #121212;
+  text-align: center;
+}
+
+/* ▓▓▓ SOBRE MI ▓▓▓ */
+.sobre-mi {
+  padding: 100px 50px;
+  background: #111;
+  text-align: center;
+}
+
+.sobre-mi h2 {
+  font-family: 'Cinzel', serif;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.sobre-mi-texto {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+  color: #ddd;
+}
+
+/* CARRUSEL SOBRE MI */
+.about-carousel {
+  position: relative;
+  width: 85%;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.about-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.about-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-slide img {
+  width: 70%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.about-slide img:hover {
+  transform: scale(1.03);
+}
+
+.about-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  z-index: 5;
+}
+
+.about-prev { left: 10px; }
+.about-next { right: 10px; }
+
+.about-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+
+.categorias h2 {
+  font-family: 'Cinzel', serif;
+  margin: 60px 0 30px 0;
+  color: #ffffff;
+}
+
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+
+.cat-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+
+.cat-grid img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+
+/* ▓▓▓ CONTACTO ▓▓▓ */
+.contacto {
+  background: #0b0b0b;
+  padding: 100px 50px;
+  text-align: center;
+}
+
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  gap: 15px;
+}
+
+
+.contacto input, .contacto textarea {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 10px;
+  color: #fa1212;
+  border-radius: 5px;
+}
+
+
+.contacto textarea {
+  resize: none;
+  height: 120px;
+}
+
+
+/* ▓▓▓ PIE DE PÁGINA ▓▓▓ */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+
+/* ▓▓▓ SUBPÁGINAS ▓▓▓ */
+.subpagina {
+  background: #000;
+  color: #fff;
+  padding-top: 60px;
+}
+
+
+/* ▓▓▓ BOTÓN VOLVER (FINAL LIMPIO) ▓▓▓ */
+.boton-volver {
+  position: fixed;
+  top: 20px;       /* AJUSTÁ AQUÍ LA ALTURA */
+  left: 20px;
+  padding: 10px 20px;
+  background: #ffffff10;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  transition: 0.3s;
+}
+/* Subpágina – Estilos generales */
+.subpagina {
+  background: #000;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 20px; /* para evitar que todo quede pegado arriba */
+}
+
+
+/* Botón Volver estilo RUNAS */
+.btn-volver-runas {
+  position: fixed;
+  top: 10px;         /* AHORA SÍ, ARRIBÍSIMO */
+  left: 20px;
+  padding: 10px 18px;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  transition: 0.25s;
+}
+
+
+.btn-volver-runas:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+
+/* Líneas rúnicas brillantes en los bordes */
+.btn-volver-runas::before,
+.btn-volver-runas::after {
+  content: "ᚱᛟᛊᛏ"; /* símbolos rúnicos decorativos */
+  position: absolute;
+  font-size: 12px;
+  color: #ff000080;
+  opacity: 0.6;
+  transition: 0.4s ease;
+  .boton-volver {
+    position: fixed;
+    top: 20px;   /* SUBILO o BAJALO cambiando este valor */
+    left: 20px;
+    padding: 10px 20px;
+    background: #ffffff10;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    z-index: 999;
+}
+
+
+}
+
+
+.btn-volver-runas::before {
+.boton-volver {
+    position: fixed;
+    top: 20px;   /* SUBILO o BAJALO cambiando este valor */
+    left: 20px;
+    padding: 10px 20px;
+    background: #ffffff10;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    z-index: 999;
+}
+}
+
+
+.btn-volver-runas::after {
+.boton-volver {
+    position: fixed;
+    top: 20px;   /* SUBILO o BAJALO cambiando este valor */
+    left: 20px;
+    padding: 10px 20px;
+    background: #ffffff10;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    z-index: 999;
+}
+
+
+}
+
+
+/* Efecto hover: brillo rojo + runas encendidas */
+.btn-volver-runas:hover {
+  background: #1a0000;
+  border-color: #ff0000;
+  color: #ffffff;
+  box-shadow:
+      0 0 15px #ff0000,
+      0 0 40px #700000 inset;
+  transform: translateY(-3px);
+}
+
+
+.btn-volver-runas:hover::before,
+.btn-volver-runas:hover::after {
+  color: #ff3333;
+  opacity: 1;
+}
+/* Contenedor del proyecto */
+.proyecto {
+  max-width: 900px;
+  margin: 80px auto 40px auto; /* deja espacio al botón */
+  padding: 20px;
+}
+
+
+/* Imagen grande */
+.img-grande {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+
+/* Texto del proceso */
+.texto-proceso {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 12px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+
+.texto-proceso h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+
+.texto-proceso p strong {
+  color: #ffdd8a; /* resaltado cálido estilo grimorio */
+}
+
+
+
+
+.boton-volver:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+
+/* Contenido */
+.subpagina-contenido {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+.sub-imagen {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 12px;
+}
+
+
+.sub-texto {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 35px;
+  line-height: 1.75;
+  border-radius: 15px;
+  font-size: 1.15rem;
+  backdrop-filter: blur(4px);
+}
+
+
+.sub-texto h1 {
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+
+.sub-texto p {
+  margin-bottom: 18px;
+}
+
+
+/* Proyecto */
+.proyecto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+
+.img-grande {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+}
+
+
+.texto-proceso h1 {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 15px;
+}
+
+
+.texto-proceso p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* ------------------------- */
+/*     CARRUSEL MOCKUPS      */
+/* ------------------------- */
+
+
+.mockups-section {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.mockup-carousel {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+
+.mockup-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  gap: 20px;
+}
+
+
+.mockup-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.mockup-slide img {
+  width: 70%;
+  max-width: 450px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+
+.mockup-slide img:hover {
+  transform: scale(1.03);
+}
+
+
+/* BOTONES DEL CARRUSEL */
+.mockup-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 10;
+  transition: 0.3s ease;
+}
+
+
+.mockup-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+
+.mockup-prev {
+  left: 10px;
+}
+
+
+.mockup-next {
+  right: 10px;
+}
+
+
+/* ------------------------- */
+/*       MODAL MOCKUPS       */
+/* ------------------------- */
+
+
+.mockup-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+.mockup-modal-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+
+.mockup-modal-img {
+  max-width: 70%;
+  max-height: 80%;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+
+/* Botones modal */
+.mockup-prev-modal,
+.mockup-next-modal,
+.mockup-close {
+  position: absolute;
+  z-index: 3;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 10px 14px;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+
+.mockup-close {
+  top: 20px;
+  right: 20px;
+}
+
+
+.mockup-prev-modal {
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.mockup-next-modal {
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.mockup-prev-modal:hover,
+.mockup-next-modal:hover,
+.mockup-close:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+
+/* ------------------------- */
+/*      MODAL TROQUEL       */
+/* ------------------------- */
+
+
+.troquel-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+.troquel-modal-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+
+.troquel-modal-img {
+  max-width: 70%;
+  max-height: 80%;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+
+.troquel-close,
+.troquel-prev,
+.troquel-next {
+  position: absolute;
+  z-index: 3;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 10px 14px;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+
+.troquel-close {
+  top: 20px;
+  right: 20px;
+}
+
+
+.troquel-prev {
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.troquel-next {
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.troquel-prev:hover,
+.troquel-next:hover,
+.troquel-close:hover {
+  background: rgba(0,0,0,0.8);
+}
